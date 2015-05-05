@@ -1,0 +1,6 @@
+package br.com.rankmatch.util;
+
+public enum EVENT_TYPE {
+	
+
+}

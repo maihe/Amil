@@ -1,0 +1,14 @@
+package br.com.rankmatch.util;
+
+import java.util.Date;
+import java.util.List;
+
+class Match {
+
+	private int id;
+	private int state;
+	private Date initTime;
+	private Date finishTime;
+	List<Player> listPlayer;
+	
+}

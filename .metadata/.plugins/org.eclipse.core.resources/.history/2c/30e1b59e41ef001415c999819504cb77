@@ -1,0 +1,49 @@
+package br.com.rankmatch.util;
+
+import java.util.HashMap;
+
+class Player {
+
+	private String nickName;
+	private HashMap<Object, String> listPlayersKilled;
+	private HashMap<Object, String> listDeaths;
+	private int strakCount;
+
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public HashMap<Object, String> getListPlayersKilled() {
+		return listPlayersKilled;
+	}
+
+	public void setListPlayersKilled(HashMap<Object, String> listPlayersKilled) {
+		this.listPlayersKilled = listPlayersKilled;
+	}
+
+	public HashMap<Object, String> getListDeaths() {
+		return listDeaths;
+	}
+
+	public void setListDeaths(HashMap<Object, String> listDeaths) {
+		this.listDeaths = listDeaths;
+	}
+
+	public int getStrakCount() {
+		return strakCount;
+	}
+
+	public void setStrakCount(int strakCount) {
+		this.strakCount = strakCount;
+	}
+
+	public void addKill(String enemyName, String gun) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

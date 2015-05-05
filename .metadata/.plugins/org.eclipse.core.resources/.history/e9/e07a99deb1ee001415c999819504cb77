@@ -1,0 +1,12 @@
+package br.com.rankmatch.util;
+
+import java.util.HashMap;
+
+class Player {
+
+	private String nickName;
+	private HashMap<Object,String> listPlayersKilled;
+	private HashMap<Object, String> listDeaths;
+	private int strakCount;
+	
+}

@@ -1,0 +1,30 @@
+package br.com.rankmatch.util;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
+public class Utils {
+	public static void main(){
+		readLog();
+	}
+	
+	public void readLog() {
+		try {
+			FileInputStream fstream = new FileInputStream("abc.log");
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					fstream));
+			String strLine;
+			/* read log line by line */
+			while ((strLine = br.readLine()) != null) {
+				/* parse strLine to obtain what you want */
+				System.out.println(strLine);
+			}
+			in.close(); 
+		} catch (Exception e) {
+			System.err.println("Error: " + e.getMessage());
+		}
+		
+	}
+	
+}

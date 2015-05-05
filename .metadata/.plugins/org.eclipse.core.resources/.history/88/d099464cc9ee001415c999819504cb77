@@ -1,0 +1,86 @@
+package br.com.rankmatch.util;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
+public class Main {
+
+	static Match match = new Match();
+	
+	public static void main(String[] args) {
+		
+		readLog("C:\\Users\\Maiara\\Desktop\\amil\\log.txt");
+	}
+
+	private static void readLog(String logPath) {
+		try {
+			FileInputStream fstream = new FileInputStream(logPath);
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					fstream));
+			String strLine;
+			/* read log line by line */
+			while ((strLine = br.readLine()) != null) {
+				/* parse strLine to obtain what you want */
+				String[] splLine = strLine.split("-");
+				String[] eventWords = splLine[1].split(" ");
+				switch (identifyEvent(eventWords)) {
+				case 0:
+					initMatch(eventWords);
+					break;
+				case 1:
+					addKill(eventWords);
+					break;
+				case 2:
+					endMatch(eventWords);
+					break;
+				default:
+					ixi();
+					break;
+				}
+			}
+			br.close();
+		} catch (Exception e) {
+			System.err.println("Error: " + e.getMessage());
+		}
+
+	}
+
+	private static int identifyEvent(String[] eventWords) {
+
+		for (String word : eventWords) {
+
+			if (word.equals("started")) {
+				return 0;
+			} else if (word.equals("killed")) {
+				return 1;
+			} else if (word.equals("ended")) {
+				return 2;
+			}
+
+		}
+
+		return -1;
+	}
+
+	private static void initMatch() {
+		match = new Match();
+	}
+
+	private static void endMatch() {
+		match = null;
+	}
+
+	private static void ixi() {
+		// TODO Auto-generated method stub
+
+	}
+	
+	private static void addKill(String[] eventWords) {
+		if (!eventWords[0].equals("<WORLD>")) {
+
+		}
+		// addDeath();
+	}
+	
+}
